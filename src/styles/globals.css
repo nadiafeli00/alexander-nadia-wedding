@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700&family=DM+Sans:ital,wght@0,400;0,500;0,700&family=Inter:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-ivory text-dark-taupe font-sans;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" result="noise" /></filter><rect width="100" height="100" fill="%23FFFBF5" /><rect width="100" height="100" fill="%23FFFBF5" filter="url(%23noise)" opacity="0.02" /></svg>');
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  @apply font-serif font-light;
+  letter-spacing: 0.05em;
+}
+
+h1 {
+  @apply text-5xl md:text-7xl leading-tight;
+}
+
+h2 {
+  @apply text-4xl md:text-5xl leading-snug;
+}
+
+h3 {
+  @apply text-2xl md:text-3xl;
+}
+
+p {
+  @apply leading-relaxed;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ivory;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-sage-green rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-dark-taupe;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Paper texture effect */
+.paper-texture {
+  background-image: 
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><defs><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" result="noise" /><feDisplacementMap in="SourceGraphic" in2="noise" scale="1" /></filter></defs><rect width="200" height="200" fill="%23FFFBF5" /><rect width="200" height="200" fill="%23FFFBF5" filter="url(%23noise)" opacity="0.05" /></svg>');
+}
+
+/* Emboss effect */
+.emboss-effect {
+  filter: drop-shadow(2px 2px 2px rgba(107, 91, 86, 0.1)) drop-shadow(-1px -1px 1px rgba(255, 251, 245, 0.8));
+}
+
+/* Smooth transitions */
+.transition-smooth {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Luxury button styles */
+.btn-luxury {
+  @apply px-8 py-3 border border-dark-taupe text-dark-taupe hover:bg-dark-taupe hover:text-ivory transition-smooth uppercase tracking-widest text-sm font-display;
+}
+
+.btn-luxury-filled {
+  @apply px-8 py-3 bg-dark-taupe text-ivory hover:bg-sage-green transition-smooth uppercase tracking-widest text-sm font-display;
+}
+
+/* Selection */
+::selection {
+  @apply bg-sage-green text-ivory;
+}
